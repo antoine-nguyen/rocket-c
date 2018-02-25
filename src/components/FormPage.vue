@@ -125,7 +125,7 @@ export default {
         this.questions.forEach(question => {
           response[question.name] = question.model
         })
-        db.ref('responses').push(response)
+        db.ref('responses').push(response, (error) => { console.log(error) })
         this.submitedYet = true
       }
       event.preventDefault()

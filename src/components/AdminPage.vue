@@ -133,7 +133,10 @@ export default {
 
   firebase: {
     responses: {
-      source: db.ref('responses')
+      source: db.ref('responses'),
+      cancelCallback (err) {
+        console.error(err)
+      }
     }
   }
 }
